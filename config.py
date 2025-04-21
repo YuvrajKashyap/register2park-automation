@@ -1,0 +1,4 @@
+APARTMENT = "205-1"
+MAKE = "Mazda"
+MODEL = "CX-5"
+PLATE = "VHZ2267"
