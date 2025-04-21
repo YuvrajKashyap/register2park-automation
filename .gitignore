@@ -2,4 +2,3 @@ __pycache__/
 .env
 *.log
 config.py
-config_template.py
