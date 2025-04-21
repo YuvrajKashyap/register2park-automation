@@ -3,8 +3,16 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from config_template import APARTMENT, MAKE, MODEL, PLATE
 import time
+
+
+# this works for me bc i have my own config file, but it'll go to the template if you don't have one
+
+try:
+    from config import APARTMENT, MAKE, MODEL, PLATE
+except ImportError:
+    from config_template import APARTMENT, MAKE, MODEL, PLATE
+
 
 
 # path to your downloaded ChromeDriver
