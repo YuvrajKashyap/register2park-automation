@@ -9,9 +9,9 @@ import time
 # this works for me bc i have my own config file, but it'll go to the template if you don't have one
 
 try:
-    from config import APARTMENT, MAKE, MODEL, PLATE
+    from config import APARTMENT, MAKE, MODEL, PLATE, EMAIL
 except ImportError:
-    from config_template import APARTMENT, MAKE, MODEL, PLATE
+    from config_template import APARTMENT, MAKE, MODEL, PLATE, EMAIL
 
 
 
@@ -122,11 +122,35 @@ try:
     next_submit.click()
     
     print("Submitted the parking registration form!")
+    
+    # click "E-Mail Confirmation" button
+    email_btn = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "email-confirmation"))
+    )
+    email_btn.click()
+    print("Clicked Email Confirmation button")
+
+    # enter email in the input field
+    email_input = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "emailConfirmationEmailView"))
+    )
+    email_input.clear()
+    email_input.send_keys(EMAIL)
+    print("Entered email address")
+
+    # click send button
+    send_btn = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "email-confirmation-send-view"))
+    )
+    send_btn.click()
+    print("Sent confirmation email")
+
+    
    
     
 except Exception as e:
     
-    print("Error: Could not find the 'Register Vehicle' button.")
+    print("Error: Could not sign you up for parking")
     print(str(e))
     
     
