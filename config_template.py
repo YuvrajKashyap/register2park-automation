@@ -3,4 +3,5 @@ APARTMENT = "YOUR_APT_HERE"
 MAKE = "YOUR_CAR_MAKE"
 MODEL = "YOUR_CAR_MODEL"
 PLATE = "YOUR_LICENSE_PLATE"
+EMAIL = "YOUR_EMAIL_HERE"
 # fun fact: i put my actual info here at first like an idiot :)
