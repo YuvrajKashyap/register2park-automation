@@ -134,14 +134,18 @@ try:
 
     # enter email in the input field
 
+    # enter email in the input field
     email_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "emailConfirmationEmailView"))
     )
-    
-    email_input.click()
+
+    # use JavaScript to force focus + click (more reliable for modals)
+    driver.execute_script("arguments[0].focus(); arguments[0].click();", email_input)
+    time.sleep(0.3)  # give it a moment
     email_input.clear()
     email_input.send_keys(EMAIL)
     print("Entered email address")
+
 
     # click send button
     send_btn = WebDriverWait(driver, 10).until(
