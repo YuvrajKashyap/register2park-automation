@@ -129,11 +129,16 @@ try:
     )
     email_btn.click()
     print("Clicked Email Confirmation button")
+    
+    
 
     # enter email in the input field
+
     email_input = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "emailConfirmationEmailView"))
     )
+    
+    email_input.click()
     email_input.clear()
     email_input.send_keys(EMAIL)
     print("Entered email address")
