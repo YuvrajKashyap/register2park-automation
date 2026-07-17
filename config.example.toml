@@ -1,0 +1,14 @@
+[property]
+query = "YOUR_PROPERTY_SEARCH_TERM"
+result_match = "EXPECTED_TEXT_FROM_THE_CORRECT_RESULT"
+
+[resident]
+unit = "YOUR_UNIT_OR_APARTMENT"
+
+[vehicle]
+make = "YOUR_VEHICLE_MAKE"
+model = "YOUR_VEHICLE_MODEL"
+plate = "YOUR_LICENSE_PLATE"
+
+[contact]
+email = "YOUR_EMAIL_ADDRESS"

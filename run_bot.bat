@@ -1,4 +1,7 @@
 @echo off
-cd /d C:\Users\yuvraj\OneDrive\Projects\register2park-automation
+setlocal
+cd /d "%~dp0"
 python main.py
+set "EXIT_CODE=%ERRORLEVEL%"
 pause
+exit /b %EXIT_CODE%
